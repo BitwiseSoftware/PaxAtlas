@@ -4,8 +4,6 @@
 
 PA::Map::Map()
 {
-	texture.loadFromFile("Resources/Map/Provinces.bmp");
-	sprite.setTexture(texture);
 	sprite.scale(10, 10);
 }
 

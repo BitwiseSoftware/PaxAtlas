@@ -16,6 +16,6 @@ PA::Province::ProvinceLoader::ProvinceLoader()
 		sf::Vector2f position;
 		position.x = province["position"]["x"].asFloat();
 		position.y = province["position"]["y"].asFloat();
-		new PA::Province::Province(points, position);
+		//new PA::Province::Province(points, position);
 	}
 }

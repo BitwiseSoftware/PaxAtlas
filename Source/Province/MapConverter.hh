@@ -28,9 +28,10 @@ namespace PA {
 
 		private:
 			sf::Image provinces_image;
-			std::unordered_map < sf::Color, std::vector<sf::Vector2i> > tiles;
+			std::unordered_map < sf::Color, std::vector<sf::Vector2f> > tiles;
 
 			void init_tiles();
+			void create_shape();
 		};
 	}
 }
