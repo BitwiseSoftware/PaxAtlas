@@ -18,7 +18,9 @@ void PA::Province::MapConverter::init_tiles()
 		for (unsigned int y = 0; y < provinces_image.getSize().y; y++)
 		{
 			auto pixel_colour = provinces_image.getPixel(x, y);
-			tiles[pixel_colour].push_back(sf::Vector2f(x, y));
+			if (pixel_colour != sf::Color(255, 255, 255)) {
+				tiles[pixel_colour].push_back(sf::Vector2f(x, y));
+			}
 		}
 	}
 }
