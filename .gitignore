@@ -1,0 +1,6 @@
+Debug/
+Release/
+
+# Cache files
+*.opensdf
+*.sdf
