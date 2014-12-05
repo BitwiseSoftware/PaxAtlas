@@ -32,6 +32,10 @@ namespace PA {
 
 			void init_tiles();
 			void create_shape();
+
+			// http://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain#C.2B.2B
+			int cross(const sf::Vector2f &O, const sf::Vector2f &A, const sf::Vector2f &B);
+			std::vector<sf::Vector2f> convex_hull(std::vector<sf::Vector2f> pixels);
 		};
 	}
 }
