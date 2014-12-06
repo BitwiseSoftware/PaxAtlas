@@ -2,8 +2,6 @@
 
 #include "Province.hh"
 
-#include <iostream>
-
 PA::Province::MapConverter::MapConverter()
 {
 	init_tiles();
@@ -30,7 +28,6 @@ void PA::Province::MapConverter::init_tiles()
 		auto& pixels = pair.second;
 		std::vector<sf::Vector2f> new_pixels;
 		sf::Vector2f last_pixel(pixels[0]);
-		std::cout << last_pixel.x << " ";
 		while (true)
 		{
 			auto found = std::find_if(pixels.begin(), pixels.end(), [last_pixel](const sf::Vector2f& pixel)
@@ -53,8 +50,6 @@ void PA::Province::MapConverter::init_tiles()
 				break;
 			}
 
-			//std::cout << last_pixel.x << " ";
-
 			new_pixels.push_back(*found);
 			last_pixel = *found;
 			pixels.erase(found);
@@ -76,7 +71,6 @@ void PA::Province::MapConverter::create_shape()
 
 		for (unsigned int i = 0; i < pixels.size(); i++)
 		{
-			std::cout << pixels[i].x << " ";
 			shape.setPoint(i, pixels[i]);
 		}
 
