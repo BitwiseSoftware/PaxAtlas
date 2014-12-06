@@ -2,6 +2,8 @@
 
 #include "Province.hh"
 
+#include <iostream>
+
 PA::Province::MapConverter::MapConverter()
 {
 	init_tiles();
@@ -26,7 +28,38 @@ void PA::Province::MapConverter::init_tiles()
 	for (auto& pair : tiles)
 	{
 		auto& pixels = pair.second;
-		pixels = convex_hull(pixels);
+		std::vector<sf::Vector2f> new_pixels;
+		sf::Vector2f last_pixel(pixels[0]);
+		std::cout << last_pixel.x << " ";
+		while (true)
+		{
+			auto found = std::find_if(pixels.begin(), pixels.end(), [last_pixel](const sf::Vector2f& pixel)
+			{
+				bool same_row_ahead = pixel == last_pixel + sf::Vector2f(1, 0);
+				bool same_column_ahead = pixel == last_pixel + sf::Vector2f(0, 1);
+				bool same_row_behind = pixel == last_pixel - sf::Vector2f(1, 0);
+				bool same_column_behind = pixel == last_pixel - sf::Vector2f(0, 1);
+				if (same_row_ahead || same_column_ahead || same_row_behind || same_column_behind)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			});
+			if (found == pixels.end())
+			{
+				break;
+			}
+
+			//std::cout << last_pixel.x << " ";
+
+			new_pixels.push_back(*found);
+			last_pixel = *found;
+			pixels.erase(found);
+		}
+		pixels = new_pixels;
 	}
 }
 
@@ -43,40 +76,11 @@ void PA::Province::MapConverter::create_shape()
 
 		for (unsigned int i = 0; i < pixels.size(); i++)
 		{
+			std::cout << pixels[i].x << " ";
 			shape.setPoint(i, pixels[i]);
 		}
 
 		auto province = new PA::Province::Province;
 		province->set_shape(shape);
 	}
-}
-
-// http://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain#C.2B.2B
-int PA::Province::MapConverter::cross(const sf::Vector2f &O, const sf::Vector2f &A, const sf::Vector2f &B)
-{
-	return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
-}
-
-//http://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain#C.2B.2B
-std::vector<sf::Vector2f> PA::Province::MapConverter::convex_hull(std::vector<sf::Vector2f> pixels)
-{
-	int n = pixels.size(), k = 0;
-	std::vector<sf::Vector2f> h(2 * n);
-
-	// Build lower hull
-	for (int i = 0; i < n; ++i)
-	{
-		while (k >= 2 && cross(h[k - 2], h[k - 1], pixels[i]) <= 0) k--;
-		h[k++] = pixels[i];
-	}
-
-	// Build upper hull
-	for (int i = n - 2, t = k + 1; i >= 0; i--)
-	{
-		while (k >= t && cross(h[k - 2], h[k - 1], pixels[i]) <= 0) k--;
-		h[k++] = pixels[i];
-	}
-
-	h.resize(k);
-	return h;
 }
