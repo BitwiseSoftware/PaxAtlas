@@ -10,7 +10,11 @@ PA::Province::ProvinceLoader::ProvinceLoader()
 
 	for (auto province : root["provinces"])
 	{
-		const sf::Color colour(province["colour"]["r"].asInt(), province["colour"]["g"].asInt(), province["colour"]["b"].asInt());
+		const int red = province["colour"]["r"].asInt();
+		const int green = province["colour"]["g"].asInt();
+		const int blue = province["colour"]["b"].asInt();
+
+		const sf::Color colour(red, green, blue);
 		auto& pixels = map_converter.tiles[colour];
 
 		sf::ConvexShape shape;
