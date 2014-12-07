@@ -16,14 +16,7 @@ PA::Country::CountryLoader::CountryLoader()
 			auto& found = std::find_if(Mikan::Entity::entities.begin(), Mikan::Entity::entities.end(), [province_id](Mikan::Entity* entity)
 			{
 				auto province = (PA::Province::Province*)entity;
-				if (province->id == province_id)
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+				return province->id == province_id;
 			});
 			auto province = (PA::Province::Province*)*found;
 			country->add_province(province);
