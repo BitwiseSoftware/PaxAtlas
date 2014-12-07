@@ -19,7 +19,8 @@ PA::Province::ProvinceLoader::ProvinceLoader()
 
 		sf::ConvexShape shape;
 		shape.setPointCount(pixels.size());
-		shape.setFillColor(colour);
+		shape.setOutlineColor(sf::Color::Blue);
+		shape.setOutlineThickness(1);
 
 		for (unsigned int i = 0; i < pixels.size(); i++)
 		{
