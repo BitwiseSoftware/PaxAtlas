@@ -1,13 +1,12 @@
 #include "Country.hh"
 
-PA::Country::Country::Country()
+PA::Country::Country::Country(const sf::Color& color)
 {
-
+	this->color = color;
 }
 
 void PA::Country::Country::add_province(PA::Province::Province* province)
 {
-	// Temperary global province colour
-	province->shape.setFillColor(sf::Color::Green);
+	province->shape.setFillColor(color);
 	provinces.push_back(province);
 }

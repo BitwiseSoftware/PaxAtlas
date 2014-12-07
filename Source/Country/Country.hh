@@ -10,12 +10,14 @@ namespace PA
 		class Country
 		{
 		public:
-			Country();
+			Country(const sf::Color& color);
 
 			void add_province(PA::Province::Province* province);
 
 		private:
 			std::vector<PA::Province::Province*> provinces;
+
+			sf::Color color;
 		};
 	}
 }

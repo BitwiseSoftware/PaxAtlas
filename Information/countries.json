@@ -3,8 +3,27 @@
         {
             "id": 0,
             "name": "bruvia",
-            "provinces": [ 
-                0, 1
+            "colour": {
+                "r": 125,
+                "g": 75,
+                "b": 50
+            },
+            "provinces": [
+                0,
+                1
+            ]
+        },
+        {
+            "id": 1,
+            "name": "wutmania",
+            "colour": {
+                "r": 50,
+                "g": 75,
+                "b": 125
+            },
+            "provinces": [
+                2,
+                3
             ]
         }
     ]

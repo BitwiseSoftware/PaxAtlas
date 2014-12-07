@@ -9,7 +9,12 @@ PA::Country::CountryLoader::CountryLoader()
 
 	for (const auto& country_json : root["countries"])
 	{
-		auto country = new PA::Country::Country;
+		const int red = country_json["colour"]["r"].asInt();
+		const int green = country_json["colour"]["g"].asInt();
+		const int blue = country_json["colour"]["b"].asInt();
+		const sf::Color colour(red, green, blue);
+
+		auto country = new PA::Country::Country(colour);
 		for (const auto& province_json : country_json["provinces"])
 		{
 			int province_id = province_json.asInt();
