@@ -26,9 +26,7 @@ PA::Country::CountryLoader::CountryLoader()
 				}
 			});
 			auto province = (PA::Province::Province*)*found;
-			// Temperary global province colour
-			province->shape.setFillColor(sf::Color::Green);
-			country->provinces.push_back(province);
+			country->add_province(province);
 		}
 	}
 }

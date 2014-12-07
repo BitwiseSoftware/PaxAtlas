@@ -12,6 +12,9 @@ namespace PA
 		public:
 			Country();
 
+			void add_province(PA::Province::Province* province);
+
+		private:
 			std::vector<PA::Province::Province*> provinces;
 		};
 	}
