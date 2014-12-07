@@ -26,12 +26,12 @@ namespace PA {
 		public:
 			MapConverter();
 
-		private:
-			sf::Image provinces_image;
 			std::unordered_map < sf::Color, std::vector<sf::Vector2f> > tiles;
 
+		private:
+			sf::Image provinces_image;
+
 			void init_tiles();
-			void create_shape();
 			void convert_to_convex();
 		};
 	}

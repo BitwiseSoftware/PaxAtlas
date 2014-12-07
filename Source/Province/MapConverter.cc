@@ -6,7 +6,6 @@ PA::Province::MapConverter::MapConverter()
 {
 	init_tiles();
 	convert_to_convex();
-	create_shape();
 }
 
 void PA::Province::MapConverter::init_tiles()
@@ -59,26 +58,5 @@ void PA::Province::MapConverter::convert_to_convex()
 			pixels.erase(found);
 		}
 		pixels = new_pixels;
-	}
-}
-
-void PA::Province::MapConverter::create_shape()
-{
-	for (const auto& pair : tiles)
-	{
-		const auto& color = pair.first;
-		const auto& pixels = pair.second;
-
-		sf::ConvexShape shape;
-		shape.setPointCount(pixels.size());
-		shape.setFillColor(color);
-
-		for (unsigned int i = 0; i < pixels.size(); i++)
-		{
-			shape.setPoint(i, pixels[i]);
-		}
-
-		auto province = new PA::Province::Province;
-		province->set_shape(shape);
 	}
 }

@@ -1,21 +1,28 @@
 #include "ProvinceLoader.hh"
 
 #include "Province.hh"
+#include "MapConverter.hh"
 
 PA::Province::ProvinceLoader::ProvinceLoader()
 {
+	PA::Province::MapConverter map_converter;
 	load_json("Information/provinces.json");
 
 	for (auto province : root["provinces"])
 	{
-		std::vector<sf::Vector2f> points;
-		for (auto point : province["points"])
+		const sf::Color colour(province["colour"]["r"].asInt(), province["colour"]["g"].asInt(), province["colour"]["b"].asInt());
+		auto& pixels = map_converter.tiles[colour];
+
+		sf::ConvexShape shape;
+		shape.setPointCount(pixels.size());
+		shape.setFillColor(colour);
+
+		for (unsigned int i = 0; i < pixels.size(); i++)
 		{
-			points.push_back(sf::Vector2f(point[0].asFloat(), point[1].asFloat()));
+			shape.setPoint(i, pixels[i]);
 		}
-		sf::Vector2f position;
-		position.x = province["position"]["x"].asFloat();
-		position.y = province["position"]["y"].asFloat();
-		//new PA::Province::Province(points, position);
+
+		auto province = new PA::Province::Province;
+		province->set_shape(shape);
 	}
 }
