@@ -70,6 +70,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Country\Country.cc" />
+    <ClCompile Include="Source\Country\CountryLoader.cc" />
     <ClCompile Include="Source\FrameRate.cc" />
     <ClCompile Include="Source\jsoncpp.cpp" />
     <ClCompile Include="Source\Main.cc" />
@@ -83,6 +85,8 @@
     <ClCompile Include="Source\Province\ProvinceLoader.cc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Country\Country.hh" />
+    <ClInclude Include="Source\Country\CountryLoader.hh" />
     <ClInclude Include="Source\FrameRate.hh" />
     <ClInclude Include="Source\Map.hh" />
     <ClInclude Include="Source\Mikan\Debug.hh" />
@@ -94,6 +98,7 @@
     <ClInclude Include="Source\Province\ProvinceLoader.hh" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Information\countries.json" />
     <None Include="Information\provinces.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

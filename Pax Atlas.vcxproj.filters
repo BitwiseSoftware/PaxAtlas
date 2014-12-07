@@ -17,6 +17,9 @@
     <Filter Include="Source\Mikan">
       <UniqueIdentifier>{e05e08e0-95cc-4283-96b8-55966ac4470c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Country">
+      <UniqueIdentifier>{6ae49d39-c889-40ca-8207-06ec17b3a372}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Mikan\Debug.cc">
@@ -52,6 +55,12 @@
     <ClCompile Include="Source\Province\MapConverter.cc">
       <Filter>Source\Province</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Country\Country.cc">
+      <Filter>Source\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Country\CountryLoader.cc">
+      <Filter>Source\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Mikan\Debug.hh">
@@ -81,9 +90,18 @@
     <ClInclude Include="Source\Province\MapConverter.hh">
       <Filter>Source\Province</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Country\Country.hh">
+      <Filter>Source\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Country\CountryLoader.hh">
+      <Filter>Source\Country</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Information\provinces.json">
+      <Filter>Information</Filter>
+    </None>
+    <None Include="Information\countries.json">
       <Filter>Information</Filter>
     </None>
   </ItemGroup>

@@ -27,7 +27,7 @@ PA::Province::ProvinceLoader::ProvinceLoader()
 			shape.setPoint(i, pixels[i]);
 		}
 
-		auto province = new PA::Province::Province;
-		province->set_shape(shape);
+		auto province_entity = new PA::Province::Province(province["id"].asInt());
+		province_entity->set_shape(shape);
 	}
 }
