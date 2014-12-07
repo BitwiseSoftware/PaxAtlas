@@ -32,6 +32,7 @@ namespace PA {
 
 			void init_tiles();
 			void create_shape();
+			void convert_to_convex();
 		};
 	}
 }

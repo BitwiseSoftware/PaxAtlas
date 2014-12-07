@@ -5,6 +5,7 @@
 PA::Province::MapConverter::MapConverter()
 {
 	init_tiles();
+	convert_to_convex();
 	create_shape();
 }
 
@@ -22,7 +23,10 @@ void PA::Province::MapConverter::init_tiles()
 			}
 		}
 	}
+}
 
+void PA::Province::MapConverter::convert_to_convex()
+{
 	for (auto& pair : tiles)
 	{
 		auto& pixels = pair.second;
