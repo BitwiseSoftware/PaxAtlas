@@ -19,14 +19,15 @@ PA::Province::ProvinceLoader::ProvinceLoader()
 
 		sf::ConvexShape shape;
 		shape.setPointCount(pixels.size());
-		shape.setFillColor(colour);
+		shape.setOutlineColor(sf::Color::Blue);
+		shape.setOutlineThickness(1);
 
 		for (unsigned int i = 0; i < pixels.size(); i++)
 		{
 			shape.setPoint(i, pixels[i]);
 		}
 
-		auto province = new PA::Province::Province;
-		province->set_shape(shape);
+		auto province_entity = new PA::Province::Province(province["id"].asInt());
+		province_entity->set_shape(shape);
 	}
 }

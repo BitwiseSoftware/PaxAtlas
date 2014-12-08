@@ -2,8 +2,9 @@
 
 #include "..\Mikan\Engine.hh"
 
-PA::Province::Province::Province()
+PA::Province::Province::Province(const unsigned int id)
 {
+	this->id = id;
 }
 
 void PA::Province::Province::configure_display_name()

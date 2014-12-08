@@ -10,18 +10,19 @@ namespace PA {
 		class Province : Mikan::Entity
 		{
 		public:
-			Province();
+			Province(unsigned int id);
 
 			void tick(float delta_seconds) override;
 
 			void set_shape(const sf::ConvexShape& value);
+			sf::ConvexShape shape;
+
+			unsigned int id;
 
 		private:
 			sf::Font font;
 			sf::Text name_text;
 			std::string name;
-
-			sf::ConvexShape shape;
 
 			void configure_display_name();
 		};
