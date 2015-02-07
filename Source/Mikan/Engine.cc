@@ -101,6 +101,7 @@ void Mikan::Engine::control_window(float delta_seconds)
 		{
 		case sf::Event::Closed:
 			window->close();
+			break;
 
 		case sf::Event::LostFocus:
 			paused = true;
@@ -120,6 +121,7 @@ void Mikan::Engine::control_window(float delta_seconds)
 			{
 				camera.zoom(1.1f);
 			}
+			break;
 
 		default:
 			break;
