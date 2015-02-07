@@ -20,7 +20,7 @@ namespace Mikan {
 
 		void run();
 
-		static std::string constexpr ROOT_DIR = "../";
+		static const std::string ROOT_DIR;
 
 	private:
 		void init_window();

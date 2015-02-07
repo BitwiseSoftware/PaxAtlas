@@ -2,6 +2,7 @@
 
 #include "Country.hh"
 #include "../Province/Province.hh"
+#include "../Mikan/Engine.hh"
 
 PA::Country::CountryLoader::CountryLoader()
 {
