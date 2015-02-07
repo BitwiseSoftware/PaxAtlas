@@ -9,7 +9,7 @@ PA::Province::Province::Province(const unsigned int id)
 
 void PA::Province::Province::configure_display_name()
 {
-	font.loadFromFile("Resources/Fonts/OpenSans-Regular.ttf");
+	font.loadFromFile(Mikan::Engine::ROOT_DIR + "Resources/Fonts/OpenSans-Regular.ttf");
 	name_text.setString("U wut Bruv?");
 	name_text.setCharacterSize(24);
 	name_text.setFont(font);

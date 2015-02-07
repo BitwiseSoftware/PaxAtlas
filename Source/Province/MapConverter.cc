@@ -10,7 +10,7 @@ PA::Province::MapConverter::MapConverter()
 
 void PA::Province::MapConverter::init_tiles()
 {
-	provinces_image.loadFromFile("Resources/Map/Provinces.bmp");
+	provinces_image.loadFromFile(Mikan::Engine::ROOT_DIR + "Resources/Map/Provinces.bmp");
 
 	for (unsigned int x = 0; x < provinces_image.getSize().x; x++)
 	{

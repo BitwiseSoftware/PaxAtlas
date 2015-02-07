@@ -9,7 +9,7 @@ sf::Text Mikan::Debug::text;
 
 Mikan::Debug::Debug()
 {
-	font.loadFromFile("Resources/Fonts/OpenSans-Regular.ttf");
+	font.loadFromFile(Engine::ROOT_DIR + "Resources/Fonts/OpenSans-Regular.ttf");
 	text.setPosition(sf::Vector2f(10, 10));
 	text.setFont(font);
 	text.setCharacterSize(24);
@@ -19,7 +19,7 @@ Mikan::Debug::Debug()
 
 void Mikan::Debug::print_log(const std::string line)
 {
-	std::ofstream log_file("Debug/log.txt", std::fstream::out | std::ios::app);
+	std::ofstream log_file(Mikan::Engine::ROOT_DIR + "Debug/log.txt", std::fstream::out | std::ios::app);
 
 	std::string final_line;
 	final_line

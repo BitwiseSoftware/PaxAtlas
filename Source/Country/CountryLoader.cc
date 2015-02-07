@@ -5,7 +5,7 @@
 
 PA::Country::CountryLoader::CountryLoader()
 {
-	load_json("Information/countries.json");
+	load_json(Mikan::Engine::ROOT_DIR + "Information/countries.json");
 
 	for (const auto& country_json : root["countries"])
 	{

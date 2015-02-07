@@ -20,6 +20,8 @@ namespace Mikan {
 
 		void run();
 
+		static std::string constexpr ROOT_DIR = "../";
+
 	private:
 		void init_window();
 		void init_layers();

@@ -6,7 +6,7 @@
 PA::Province::ProvinceLoader::ProvinceLoader()
 {
 	PA::Province::MapConverter map_converter;
-	load_json("Information/provinces.json");
+	load_json(Mikan::Engine::ROOT_DIR + "Information/provinces.json");
 
 	for (auto province : root["provinces"])
 	{
