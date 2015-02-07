@@ -1,7 +1,7 @@
 #include "FrameRate.hh"
 
-#include "Mikan\Engine.hh"
-#include "Mikan\Debug.hh"
+#include "Mikan/Engine.hh"
+#include "Mikan/Debug.hh"
 #include <sstream>
 #include <string>
 

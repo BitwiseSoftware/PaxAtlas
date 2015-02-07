@@ -18,7 +18,7 @@ PA::Country::CountryLoader::CountryLoader()
 		for (const auto& province_json : country_json["provinces"])
 		{
 			int province_id = province_json.asInt();
-			auto& found = std::find_if(Mikan::Entity::entities.begin(), Mikan::Entity::entities.end(), [province_id](Mikan::Entity* entity)
+			auto found = std::find_if(Mikan::Entity::entities.begin(), Mikan::Entity::entities.end(), [province_id](Mikan::Entity* entity)
 			{
 				auto province = (PA::Province::Province*)entity;
 				return province->id == province_id;

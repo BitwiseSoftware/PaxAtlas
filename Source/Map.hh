@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Mikan\Entity.hh"
-#include <SFML\Graphics.hpp>
+#include "Mikan/Entity.hh"
+#include <SFML/Graphics.hpp>
 
 namespace PA
 {

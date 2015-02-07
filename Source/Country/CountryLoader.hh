@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\Mikan\EntityLoader.hh"
+#include "../Mikan/EntityLoader.hh"
 
 namespace PA
 {

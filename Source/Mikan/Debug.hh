@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include <string>
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 namespace Mikan {
 	class Debug

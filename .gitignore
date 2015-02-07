@@ -1,6 +1,4 @@
-Debug/
-Release/
-
-# Cache files
-*.opensdf
-*.sdf
+.cproject
+.project
+.settings/
+build/

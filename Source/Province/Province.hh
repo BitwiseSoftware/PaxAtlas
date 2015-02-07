@@ -1,8 +1,8 @@
 #pragma once
 
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
-#include "..\Mikan\Entity.hh"
+#include "../Mikan/Entity.hh"
 #include <vector>
 
 namespace PA {
