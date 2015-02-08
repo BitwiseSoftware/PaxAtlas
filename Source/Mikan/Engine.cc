@@ -7,7 +7,7 @@
 std::unique_ptr<sf::RenderWindow>  Mikan::Engine::window;
 sf::RenderTexture Mikan::Engine::terrain_layer;
 sf::RenderTexture Mikan::Engine::ui_layer;
-const std::string Mikan::Engine::ROOT_DIR;
+const std::string Mikan::Engine::ROOT_DIR = "../";
 
 Mikan::Engine::Engine()
 {
