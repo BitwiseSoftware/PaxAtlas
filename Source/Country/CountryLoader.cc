@@ -26,6 +26,7 @@ PA::Country::CountryLoader::CountryLoader()
 			});
 			auto province = (PA::Province::Province*)*found;
 			country->add_province(province);
+			province->set_owner(country);
 		}
 	}
 }
