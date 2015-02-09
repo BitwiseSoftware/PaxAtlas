@@ -36,9 +36,9 @@ void PA::Province::MapConverter::convert_to_convex()
 		{
 			auto found = std::find_if(pixels.begin(), pixels.end(), [last_pixel](const sf::Vector2f& pixel)
 			{
-				bool same_row_ahead = pixel == last_pixel + sf::Vector2f(1, 0);
-				bool same_column_ahead = pixel == last_pixel + sf::Vector2f(0, 1);
-				bool same_row_behind = pixel == last_pixel - sf::Vector2f(1, 0);
+				bool same_row_ahead     = pixel == last_pixel + sf::Vector2f(1, 0);
+				bool same_column_ahead  = pixel == last_pixel + sf::Vector2f(0, 1);
+				bool same_row_behind    = pixel == last_pixel - sf::Vector2f(1, 0);
 				bool same_column_behind = pixel == last_pixel - sf::Vector2f(0, 1);
 				if (same_row_ahead || same_column_ahead || same_row_behind || same_column_behind)
 				{

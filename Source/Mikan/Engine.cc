@@ -17,6 +17,9 @@ Mikan::Engine::Engine()
 	init_layers();
 
 	Debug();
+
+	camera.zoom(.1);
+	camera.setCenter(0, 0);
 }
 
 void Mikan::Engine::run()
@@ -68,27 +71,27 @@ void Mikan::Engine::init_window()
 
 void Mikan::Engine::init_layers()
 {
-	terrain_layer.create(5000, 5000);
-	ui_layer.create(5000, 5000);
+	terrain_layer.create(1000, 1000);
+	ui_layer.create(1000, 1000);
 }
 
 void Mikan::Engine::control_camera(const float delta_seconds)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		camera.move(sf::Vector2f(0, -500 * delta_seconds));
+		camera.move(sf::Vector2f(0, -100 * delta_seconds));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		camera.move(sf::Vector2f(-500 * delta_seconds, 0));
+		camera.move(sf::Vector2f(-100 * delta_seconds, 0));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		camera.move(sf::Vector2f(0, 500 * delta_seconds));
+		camera.move(sf::Vector2f(0, 100 * delta_seconds));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		camera.move(sf::Vector2f(500 * delta_seconds, 0));
+		camera.move(sf::Vector2f(100 * delta_seconds, 0));
 	}
 }
 
