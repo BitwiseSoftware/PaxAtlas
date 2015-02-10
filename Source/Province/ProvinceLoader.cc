@@ -4,7 +4,10 @@
 #include "MapConverter.hh"
 #include "../Mikan/Engine.hh"
 
-PA::Province::ProvinceLoader::ProvinceLoader()
+namespace PA {
+namespace Province {
+
+ProvinceLoader::ProvinceLoader()
 {
 	PA::Province::MapConverter map_converter;
 	load_json(Mikan::Engine::ROOT_DIR + "Information/provinces.json");
@@ -32,3 +35,6 @@ PA::Province::ProvinceLoader::ProvinceLoader()
 		province_entity->set_shape(shape);
 	}
 }
+
+} // namespace Province
+} // namespace PA

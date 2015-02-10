@@ -3,13 +3,16 @@
 #include "Province.hh"
 #include "../Mikan/Engine.hh"
 
-PA::Province::MapConverter::MapConverter()
+namespace PA {
+namespace Province {
+
+MapConverter::MapConverter()
 {
 	init_tiles();
 	convert_to_convex();
 }
 
-void PA::Province::MapConverter::init_tiles()
+void MapConverter::init_tiles()
 {
 	provinces_image.loadFromFile(Mikan::Engine::ROOT_DIR + "Resources/Map/Provinces.bmp");
 
@@ -25,7 +28,7 @@ void PA::Province::MapConverter::init_tiles()
 	}
 }
 
-void PA::Province::MapConverter::convert_to_convex()
+void MapConverter::convert_to_convex()
 {
 	for (auto& pair : tiles)
 	{
@@ -61,3 +64,6 @@ void PA::Province::MapConverter::convert_to_convex()
 		pixels = new_pixels;
 	}
 }
+
+} // namespace Province
+} // namespace PA

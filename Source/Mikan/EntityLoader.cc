@@ -1,14 +1,15 @@
 #include "EntityLoader.hh"
 
 #include <fstream>
-
 #include <iostream>
 
-Mikan::EntityLoader::EntityLoader()
+namespace Mikan {
+
+EntityLoader::EntityLoader()
 {
 }
 
-void Mikan::EntityLoader::load_json(const std::string file_location)
+void EntityLoader::load_json(const std::string file_location)
 {
 	Json::Reader reader;
 
@@ -26,3 +27,5 @@ void Mikan::EntityLoader::load_json(const std::string file_location)
 		return;
 	}
 }
+
+} // namespace Mikan

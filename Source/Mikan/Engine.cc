@@ -3,13 +3,15 @@
 #include "Debug.hh"
 #include "Entity.hh"
 
-// Initialize static variables
-std::unique_ptr<sf::RenderWindow>  Mikan::Engine::window;
-sf::RenderTexture Mikan::Engine::terrain_layer;
-sf::RenderTexture Mikan::Engine::ui_layer;
-const std::string Mikan::Engine::ROOT_DIR = "../";
+namespace Mikan {
 
-Mikan::Engine::Engine()
+// Initialize static variables
+std::unique_ptr<sf::RenderWindow>  Engine::window;
+sf::RenderTexture Engine::terrain_layer;
+sf::RenderTexture Engine::ui_layer;
+const std::string Engine::ROOT_DIR = "../";
+
+Engine::Engine()
 {
 	paused = false;
 
@@ -22,7 +24,7 @@ Mikan::Engine::Engine()
 	camera.setCenter(0, 0);
 }
 
-void Mikan::Engine::run()
+void Engine::run()
 {
 	sf::Clock delta_clock;
 
@@ -60,7 +62,7 @@ void Mikan::Engine::run()
 	}
 }
 
-void Mikan::Engine::init_window()
+void Engine::init_window()
 {
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 16;
@@ -69,13 +71,13 @@ void Mikan::Engine::init_window()
 	window->setFramerateLimit(60);
 }
 
-void Mikan::Engine::init_layers()
+void Engine::init_layers()
 {
 	terrain_layer.create(1000, 1000);
 	ui_layer.create(1000, 1000);
 }
 
-void Mikan::Engine::control_camera(const float delta_seconds)
+void Engine::control_camera(const float delta_seconds)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
@@ -95,7 +97,7 @@ void Mikan::Engine::control_camera(const float delta_seconds)
 	}
 }
 
-void Mikan::Engine::control_window(float delta_seconds)
+void Engine::control_window(float delta_seconds)
 {
 	sf::Event event;
 	while (window->pollEvent(event))
@@ -131,3 +133,5 @@ void Mikan::Engine::control_window(float delta_seconds)
 		}
 	}
 }
+
+} // namespace Mikan

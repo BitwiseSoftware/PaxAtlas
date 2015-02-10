@@ -2,16 +2,20 @@
 
 #include <algorithm>
 
-// Initialize static variables
-std::vector<Mikan::Entity*> Mikan::Entity::entities;
+namespace Mikan {
 
-Mikan::Entity::Entity()
+// Initialize static variables
+std::vector<Entity*> Entity::entities;
+
+Entity::Entity()
 {
 	entities.push_back(this);
 }
 
-Mikan::Entity::~Entity()
+Entity::~Entity()
 {
 	const auto position = std::find(entities.begin(), entities.end(), this);
 	entities.erase(position);
 }
+
+} // namespace Mikan

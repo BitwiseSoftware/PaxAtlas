@@ -4,7 +4,10 @@
 #include "../Province/Province.hh"
 #include "../Mikan/Engine.hh"
 
-PA::Country::CountryLoader::CountryLoader()
+namespace PA {
+namespace Country {
+
+CountryLoader::CountryLoader()
 {
 	load_json(Mikan::Engine::ROOT_DIR + "Information/countries.json");
 
@@ -30,3 +33,6 @@ PA::Country::CountryLoader::CountryLoader()
 		}
 	}
 }
+
+} // namespace Country
+} // namespace PA

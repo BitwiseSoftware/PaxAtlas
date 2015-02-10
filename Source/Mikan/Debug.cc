@@ -3,11 +3,13 @@
 #include <ctime>
 #include "Engine.hh"
 
-// Initialize static variables
-sf::Font Mikan::Debug::font;
-sf::Text Mikan::Debug::text;
+namespace Mikan {
 
-Mikan::Debug::Debug()
+// Initialize static variables
+sf::Font Debug::font;
+sf::Text Debug::text;
+
+Debug::Debug()
 {
 	font.loadFromFile(Engine::ROOT_DIR + "Resources/Fonts/OpenSans-Regular.ttf");
 	text.setPosition(sf::Vector2f(10, 10));
@@ -17,7 +19,7 @@ Mikan::Debug::Debug()
 	text.setStyle(sf::Text::Bold);
 }
 
-void Mikan::Debug::print_log(const std::string line)
+void Debug::print_log(const std::string line)
 {
 	std::ofstream log_file(Mikan::Engine::ROOT_DIR + "Debug/log.txt", std::fstream::out | std::ios::app);
 
@@ -33,14 +35,14 @@ void Mikan::Debug::print_log(const std::string line)
 	log_file.close();
 }
 
-void Mikan::Debug::print_screen(const std::string line)
+void Debug::print_screen(const std::string line)
 {
 	text.setStyle(sf::Text::Bold);
 	text.setString(line);
 	Engine::ui_layer.draw(text);
 }
 
-std::string Mikan::Debug::string_time()
+std::string Debug::string_time()
 {
 	std::time_t rawtime;
 	std::tm* timeinfo;
@@ -53,3 +55,5 @@ std::string Mikan::Debug::string_time()
 
 	return std::string(buffer);
 }
+
+} // namespace Mikan
