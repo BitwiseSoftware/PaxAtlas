@@ -22,7 +22,6 @@ void Province::configure_display_name()
 
 void Province::tick(const float delta_seconds)
 {
-	Mikan::Engine::terrain_layer.draw(shape);
 	Mikan::Engine::terrain_layer.draw(name_text);
 }
 

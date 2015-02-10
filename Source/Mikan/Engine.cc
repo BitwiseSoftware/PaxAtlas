@@ -44,6 +44,7 @@ void Engine::run()
 		for (auto entity : Entity::entities)
 		{
 			entity->tick(delta_seconds);
+			entity->render();
 		}
 
 		window->setView(camera);

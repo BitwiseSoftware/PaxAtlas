@@ -1,6 +1,7 @@
 #include "Entity.hh"
 
 #include <algorithm>
+#include "../Mikan/Engine.hh"
 
 namespace Mikan {
 
@@ -16,6 +17,16 @@ Entity::~Entity()
 {
 	const auto position = std::find(entities.begin(), entities.end(), this);
 	entities.erase(position);
+}
+
+void Entity::render()
+{
+	get_layer().draw(shape);
+}
+
+sf::RenderTexture& Entity::get_layer()
+{
+	return Mikan::Engine::terrain_layer;
 }
 
 } // namespace Mikan
