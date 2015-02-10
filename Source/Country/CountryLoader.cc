@@ -11,7 +11,7 @@ CountryLoader::CountryLoader()
 {
 	load_json(Mikan::Engine::ROOT_DIR + "Information/countries.json");
 
-	for (const auto& country_json : root["countries"])
+	for (const auto country_json : root["countries"])
 	{
 		const int red = country_json["colour"]["r"].asInt();
 		const int green = country_json["colour"]["g"].asInt();
@@ -19,12 +19,12 @@ CountryLoader::CountryLoader()
 		const sf::Color colour(red, green, blue);
 
 		auto country = new PA::Country::Country(colour);
-		for (const auto& province_json : country_json["provinces"])
+		for (const auto province_json : country_json["provinces"])
 		{
-			int province_id = province_json.asInt();
+			const int province_id = province_json.asInt();
 			auto found = std::find_if(Mikan::Entity::entities.begin(), Mikan::Entity::entities.end(), [province_id](Mikan::Entity* entity)
 			{
-				auto province = (PA::Province::Province*)entity;
+				const auto province = (PA::Province::Province*)entity;
 				return province->id == province_id;
 			});
 			auto province = (PA::Province::Province*)*found;

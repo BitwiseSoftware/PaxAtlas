@@ -7,7 +7,7 @@
 
 namespace PA {
 
-FrameRate::FrameRate()
+FrameRate::FrameRate() : current_fps(0)
 {
 }
 

@@ -12,14 +12,14 @@ ProvinceLoader::ProvinceLoader()
 	PA::Province::MapConverter map_converter;
 	load_json(Mikan::Engine::ROOT_DIR + "Information/provinces.json");
 
-	for (auto province : root["provinces"])
+	for (const auto province : root["provinces"])
 	{
 		const int red = province["colour"]["r"].asInt();
 		const int green = province["colour"]["g"].asInt();
 		const int blue = province["colour"]["b"].asInt();
 
 		const sf::Color colour(red, green, blue);
-		auto& pixels = map_converter.tiles[colour];
+		const auto pixels = map_converter.tiles[colour];
 
 		sf::ConvexShape shape;
 		shape.setPointCount(pixels.size());

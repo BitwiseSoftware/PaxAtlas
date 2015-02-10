@@ -6,7 +6,7 @@ namespace PA {
 
 Map::Map()
 {
-	sprite.scale(10, 10);
+	sprite.scale(300, 300);
 }
 
 void Map::tick(const float delta_seconds)

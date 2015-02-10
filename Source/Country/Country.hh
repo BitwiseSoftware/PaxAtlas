@@ -10,7 +10,7 @@ namespace PA
 		class Country
 		{
 		public:
-			Country(const sf::Color& color);
+			Country(sf::Color color);
 
 			void add_province(Province::Province* province);
 			void remove_province(Province::Province* province);

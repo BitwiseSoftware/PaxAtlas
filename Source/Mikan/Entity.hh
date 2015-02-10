@@ -7,10 +7,12 @@ namespace Mikan {
 	{
 	public:
 		Entity();
-		~Entity();
 
 		virtual void tick(float delta_seconds) = 0;
 
 		static std::vector<Entity*> entities;
+
+	protected:
+		~Entity();
 	};
 }

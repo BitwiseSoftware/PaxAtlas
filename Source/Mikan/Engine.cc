@@ -11,10 +11,8 @@ sf::RenderTexture Engine::terrain_layer;
 sf::RenderTexture Engine::ui_layer;
 const std::string Engine::ROOT_DIR = "../";
 
-Engine::Engine()
+Engine::Engine() : paused(false)
 {
-	paused = false;
-
 	init_window();
 	init_layers();
 
@@ -50,12 +48,12 @@ void Engine::run()
 
 		window->setView(camera);
 		terrain_layer.display();
-		sf::Sprite terrain_sprite(terrain_layer.getTexture());
+		const sf::Sprite terrain_sprite(terrain_layer.getTexture());
 		window->draw(terrain_sprite);
 
 		window->setView(window->getDefaultView());
 		ui_layer.display();
-		sf::Sprite ui_sprite(ui_layer.getTexture());
+		const sf::Sprite ui_sprite(ui_layer.getTexture());
 		window->draw(ui_sprite);
 
 		window->display();
@@ -97,7 +95,7 @@ void Engine::control_camera(const float delta_seconds)
 	}
 }
 
-void Engine::control_window(float delta_seconds)
+void Engine::control_window(const float delta_seconds)
 {
 	sf::Event event;
 	while (window->pollEvent(event))

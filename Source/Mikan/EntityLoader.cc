@@ -16,7 +16,7 @@ void EntityLoader::load_json(const std::string file_location)
 	std::ifstream provinces_file;
 	provinces_file.open(file_location);
 
-	bool parsingSuccessful = reader.parse(provinces_file, root);
+	const bool parsingSuccessful = reader.parse(provinces_file, root);
 	if (!parsingSuccessful)
 	{
 		// Should instead print to a log file

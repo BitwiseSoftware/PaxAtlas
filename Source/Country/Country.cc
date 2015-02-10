@@ -5,9 +5,8 @@
 namespace PA {
 namespace Country {
 
-Country::Country(const sf::Color& color)
+Country::Country(const sf::Color color) : color(color)
 {
-	this->color = color;
 }
 
 void Country::add_province(PA::Province::Province* province)

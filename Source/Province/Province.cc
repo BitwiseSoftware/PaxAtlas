@@ -6,9 +6,8 @@
 namespace PA {
 namespace Province {
 
-Province::Province(const unsigned int id) : owner(nullptr)
+Province::Province(const unsigned int id) : owner(nullptr), id(id)
 {
-	this->id = id;
 }
 
 void Province::configure_display_name()
