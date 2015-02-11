@@ -37,8 +37,8 @@ void Engine::run()
 		}
 		control_camera(delta_seconds);
 
-		terrain_layer.clear(sf::Color(0, 0, 0, 0));
-		ui_layer.clear(sf::Color(0, 0, 0, 0));
+		terrain_layer.clear(sf::Color::Black);
+		ui_layer.clear(sf::Color::Black);
 		window->clear(sf::Color::Black);
 
 		for (auto entity : Entity::entities)
