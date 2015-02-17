@@ -7,6 +7,7 @@ set(SOURCE
 
 set(EXECUTABLE_NAME PaxAtlas)
 
+add_subdirectory(Army)
 add_subdirectory(Country)
 add_subdirectory(Mikan)
 add_subdirectory(Province)

@@ -3,33 +3,46 @@
         {
             "id": 0,
             "name": "Galaway",
+            "middle": {
+                "x": 7,
+                "y": 8
+            },
             "colour": {
                 "r": 224,
                 "g": 128,
                 "b": 0
             }
-        },
-        {
+        }, {
             "id": 1,
             "name": "Romanzi",
+            "middle": {
+                "x": 9,
+                "y": 23
+            },
             "colour": {
                 "r": 224,
                 "g": 32,
                 "b": 0
             }
-        },
-        {
+        }, {
             "id": 2,
             "name": "piguland",
+            "middle": {
+                "x": 22,
+                "y": 7
+            },
             "colour": {
                 "r": 0,
                 "g": 64,
                 "b": 0
             }
-        },
-        {
+        }, {
             "id": 3,
             "name": "yamashima",
+            "middle": {
+                "x": 24,
+                "y": 25
+            },
             "colour": {
                 "r": 224,
                 "g": 224,

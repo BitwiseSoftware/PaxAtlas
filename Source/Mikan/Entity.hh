@@ -4,19 +4,22 @@
 #include <SFML/Graphics.hpp>
 
 namespace Mikan {
-	class Entity
-	{
-	public:
-		Entity();
 
-		virtual void tick(float delta_seconds) = 0;
-		void render();
+class Entity {
+public:
+    Entity();
 
-		static std::vector<Entity*> entities;
+    virtual void tick(float delta_seconds) = 0;
+    void render();
 
-	protected:
-		~Entity();
-		sf::ConvexShape shape;
-		sf::RenderTexture& get_layer();
-	};
-}
+    static std::vector<Entity*> entities;
+
+    sf::ConvexShape get_shape();
+
+protected:
+    ~Entity();
+    sf::ConvexShape shape;
+    sf::RenderTexture& get_layer();
+};
+
+} // namepace Mikan

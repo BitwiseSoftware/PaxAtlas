@@ -1,0 +1,11 @@
+{
+    "armies": [
+	{
+	    "name": "First Bruvian Army",
+	    "province": 1,
+	    "units": [
+		"Archer"
+	    ]
+	}
+    ]
+}

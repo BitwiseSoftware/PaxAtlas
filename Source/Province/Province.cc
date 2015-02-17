@@ -6,7 +6,8 @@
 namespace PA {
 namespace Province {
 
-Province::Province(const unsigned int id) : owner(nullptr), id(id)
+Province::Province(const unsigned int id, const sf::Vector2i middle)
+        : owner(nullptr), id(id), middle(middle)
 {
 }
 
