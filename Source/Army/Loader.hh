@@ -7,7 +7,7 @@ namespace Army {
 
 class Loader : Mikan::EntityLoader {
 public:
-	Loader();
+    Loader();
 };
 
 } // namespace Army

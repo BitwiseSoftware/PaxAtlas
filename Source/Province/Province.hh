@@ -35,5 +35,5 @@ private:
     void configure_display_name();
 };
 
-} // namespace PA
 } // namespace Province
+} // namespace PA

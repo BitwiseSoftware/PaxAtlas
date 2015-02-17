@@ -5,30 +5,31 @@
 #include <unordered_map>
 
 namespace Mikan {
-	class Engine
-	{
-	public:
-		Engine();
 
-		static std::unique_ptr<sf::RenderWindow> window;
+class Engine {
+public:
+    Engine();
 
-		// layers
-		static sf::RenderTexture terrain_layer;
-		static sf::RenderTexture ui_layer;
+    static std::unique_ptr<sf::RenderWindow> window;
 
-		sf::View camera;
+    // layers
+    static sf::RenderTexture terrain_layer;
+    static sf::RenderTexture ui_layer;
 
-		void run();
+    sf::View camera;
 
-		static const std::string ROOT_DIR;
+    void run();
 
-	private:
-		void init_window();
-		void init_layers();
+    static const std::string ROOT_DIR;
 
-		void control_camera(float delta_seconds);
-		void control_window(float delta_seconds);
+private:
+    void init_window();
+    void init_layers();
 
-		bool paused;
-	};
-}
+    void control_camera(float delta_seconds);
+    void control_window(float delta_seconds);
+
+    bool paused;
+};
+
+} // namespace Mikan

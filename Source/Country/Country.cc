@@ -5,25 +5,21 @@
 namespace PA {
 namespace Country {
 
-Country::Country(const sf::Color color) : color(color)
-{
+Country::Country(const sf::Color color) : color(color) {
 }
 
-void Country::add_province(PA::Province::Province* province)
-{
-	provinces.push_back(province);
+void Country::add_province(PA::Province::Province* province) {
+    provinces.push_back(province);
 }
 
-void Country::remove_province(PA::Province::Province* province)
-{
-	const auto position = std::find(provinces.begin(), provinces.end(), province);
-	provinces.erase(position);
+void Country::remove_province(PA::Province::Province* province) {
+    const auto position = std::find(provinces.begin(), provinces.end(), province);
+    provinces.erase(position);
 }
 
-sf::Color Country::get_color()
-{
-	return color;
+sf::Color Country::get_color() {
+    return color;
 }
 
-} // Country
-} // PA
+} // namespace Country
+} // namespace PA

@@ -5,20 +5,21 @@
 #include "Mikan/Entity.hh"
 
 namespace PA {
-	class FrameRate : Mikan::Entity
-	{
-	public:
-		FrameRate();
+    
+class FrameRate : Mikan::Entity {
+public:
+    FrameRate();
 
-		void tick(float delta_seconds) override;
+    void tick(float delta_seconds) override;
 
-	private:
-		void display_fps();
-		std::string configure_text();
+private:
+    void display_fps();
+    std::string configure_text();
 
-		double current_fps;
-		sf::Clock fps_clock;
-		unsigned int fps_incrementor = 0;
-	};
-}
+    double current_fps;
+    sf::Clock fps_clock;
+    unsigned int fps_incrementor = 0;
+};
+
+} // namespace PA
 

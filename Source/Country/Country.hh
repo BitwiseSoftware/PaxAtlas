@@ -3,24 +3,24 @@
 #include <vector>
 #include "../Province/Province.hh"
 
-namespace PA
-{
-	namespace Country
-	{
-		class Country
-		{
-		public:
-			Country(sf::Color color);
+namespace PA {
+namespace Country {
 
-			void add_province(Province::Province* province);
-			void remove_province(Province::Province* province);
+class Country {
+public:
+    Country(sf::Color color);
 
-			sf::Color get_color();
+    void add_province(Province::Province* province);
+    void remove_province(Province::Province* province);
 
-		private:
-			std::vector<Province::Province*> provinces;
+    sf::Color get_color();
 
-			sf::Color color;
-		};
-	}
-}
+private:
+    std::vector<Province::Province*> provinces;
+
+    sf::Color color;
+};
+
+} // namespace Country
+} // namespace PA
+

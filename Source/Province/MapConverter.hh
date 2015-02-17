@@ -6,33 +6,35 @@
 
 // Allow sf::Color unordered keys
 namespace std {
-	template <>
-	struct hash<sf::Color>
-	{
-		std::size_t operator()(const sf::Color& key) const
-		{
-			using std::size_t;
-			using std::hash;
 
-			return (hash<int>()(key.r) + (hash<int>()(key.b)) + hash<int>()(key.b));
-		}
-	};
-}
+template <>
+struct hash<sf::Color> {
+    std::size_t operator()(const sf::Color& key) const {
+	using std::size_t;
+	using std::hash;
+
+	return (hash<int>()(key.r) + (hash<int>()(key.b)) + hash<int>()(key.b));
+	}
+    };
+} // namespace std
 
 // Converts provinces map image to actual actual province location data
 namespace PA {
-	namespace Province {
-		class MapConverter {
-		public:
-			MapConverter();
+namespace Province {
 
-			std::unordered_map < sf::Color, std::vector<sf::Vector2f> > tiles;
+class MapConverter {
+public:
+    MapConverter();
 
-		private:
-			sf::Image provinces_image;
+    std::unordered_map< sf::Color, std::vector<sf::Vector2f> > tiles;
 
-			void init_tiles();
-			void convert_to_convex();
-		};
-	}
-}
+private:
+    sf::Image provinces_image;
+
+    void init_tiles();
+    void convert_to_convex();
+};
+
+} // namespace Province
+} // namespace PA
+

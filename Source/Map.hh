@@ -3,17 +3,17 @@
 #include "Mikan/Entity.hh"
 #include <SFML/Graphics.hpp>
 
-namespace PA
-{
-	class Map : Mikan::Entity
-	{
-	public:
-		Map();
+namespace PA {
 
-		void tick(float delta_seconds) override;
+class Map : Mikan::Entity {
+public:
+    Map();
 
-	private:
-		sf::Texture texture;
-		sf::Sprite sprite;
-	};
-}
+    void tick(float delta_seconds) override;
+
+private:
+    sf::Texture texture;
+    sf::Sprite sprite;
+};
+
+} // namespace PA
