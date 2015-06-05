@@ -6,12 +6,13 @@ namespace Mikan {
 
 class EntityLoader {
 public:
-    EntityLoader();
+  EntityLoader();
 
 protected:
-    Json::Value root;
+  Json::Value root;
 
-    void load_json(std::string file_location);
+  void load_json(std::string file_location);
 };
 
 } // namespace Mikan
+

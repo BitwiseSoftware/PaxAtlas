@@ -7,19 +7,20 @@ namespace Mikan {
 
 class Entity {
 public:
-    Entity();
+  Entity();
 
-    virtual void tick(float delta_seconds) = 0;
-    void render();
+  virtual void tick(float delta_seconds) = 0;
+  void render();
 
-    static std::vector<Entity*> entities;
+  static std::vector<Entity*> entities;
 
-    sf::ConvexShape get_shape();
+  sf::ConvexShape get_shape();
 
 protected:
-    ~Entity();
-    sf::ConvexShape shape;
-    sf::RenderTexture& get_layer();
+  ~Entity();
+  sf::ConvexShape shape;
+  sf::RenderTexture& get_layer();
 };
 
 } // namepace Mikan
+

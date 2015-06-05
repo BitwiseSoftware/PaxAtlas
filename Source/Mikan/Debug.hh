@@ -10,15 +10,16 @@ namespace Mikan {
 
 class Debug {
 public:
-    Debug();
-    static void print_log(std::string line);
-    static void print_screen(std::string line);
+  Debug();
+  static void print_log(std::string line);
+  static void print_screen(std::string line);
 
 private:
-    static std::string string_time();
+  static std::string string_time();
 
-    static sf::Font font;
-    static sf::Text text;
+  static sf::Font font;
+  static sf::Text text;
 };
 
 } // namespace Mikan
+

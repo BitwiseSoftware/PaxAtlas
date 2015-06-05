@@ -9,31 +9,32 @@ namespace PA {
 
 // Forward declaration
 namespace Country {
-    class Country;
+  class Country;
 }
 
 namespace Province {
 
 class Province : public Mikan::Entity {
 public:
-    Province(unsigned int id, sf::Vector2i middle);
+  Province(unsigned int id, sf::Vector2i middle);
 
-    void tick(float delta_seconds) override;
+  void tick(float delta_seconds) override;
 
-    void set_shape(const sf::ConvexShape& value);
-    void set_owner(Country::Country* owner);
+  void set_shape(const sf::ConvexShape& value);
+  void set_owner(Country::Country* owner);
 
-    unsigned int id;
-    const sf::Vector2i middle;
+  unsigned int id;
+  const sf::Vector2i middle;
 
 private:
-    sf::Font font;
-    sf::Text name_text;
-    std::string name;
-    Country::Country* owner;
+  sf::Font font;
+  sf::Text name_text;
+  std::string name;
+  Country::Country* owner;
 
-    void configure_display_name();
+  void configure_display_name();
 };
 
 } // namespace Province
 } // namespace PA
+

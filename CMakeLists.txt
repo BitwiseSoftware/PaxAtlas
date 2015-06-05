@@ -4,3 +4,4 @@ project (PaxAtlas)
 set(LIBRARY_NAME PaxAtlasLibrary)
 
 add_subdirectory(Source)
+

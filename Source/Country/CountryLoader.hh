@@ -7,7 +7,7 @@ namespace Country {
 
 class CountryLoader : Mikan::EntityLoader {
 public:
-    CountryLoader();
+  CountryLoader();
 };
 
 } // namespace Country

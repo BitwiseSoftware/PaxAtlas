@@ -8,17 +8,17 @@ namespace PA {
     
 class FrameRate : Mikan::Entity {
 public:
-    FrameRate();
+  FrameRate();
 
-    void tick(float delta_seconds) override;
+  void tick(float delta_seconds) override;
 
 private:
-    void display_fps();
-    std::string configure_text();
+  void display_fps();
+  std::string configure_text();
 
-    double current_fps;
-    sf::Clock fps_clock;
-    unsigned int fps_incrementor = 0;
+  double current_fps;
+  sf::Clock fps_clock;
+  unsigned int fps_incrementor = 0;
 };
 
 } // namespace PA

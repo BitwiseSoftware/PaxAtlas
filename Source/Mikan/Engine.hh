@@ -8,28 +8,29 @@ namespace Mikan {
 
 class Engine {
 public:
-    Engine();
+  Engine();
 
-    static std::unique_ptr<sf::RenderWindow> window;
+  static std::unique_ptr<sf::RenderWindow> window;
 
-    // layers
-    static sf::RenderTexture terrain_layer;
-    static sf::RenderTexture ui_layer;
+  // layers
+  static sf::RenderTexture terrain_layer;
+  static sf::RenderTexture ui_layer;
 
-    sf::View camera;
+  sf::View camera;
 
-    void run();
+  void run();
 
-    static const std::string ROOT_DIR;
+  static const std::string ROOT_DIR;
 
 private:
-    void init_window();
-    void init_layers();
+  void init_window();
+  void init_layers();
 
-    void control_camera(float delta_seconds);
-    void control_window(float delta_seconds);
+  void control_camera(float delta_seconds);
+  void control_window(float delta_seconds);
 
-    bool paused;
+  bool paused;
 };
 
 } // namespace Mikan
+

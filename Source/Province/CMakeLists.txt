@@ -1,7 +1,8 @@
 set(SOURCE
-	${SOURCE}
-	${CMAKE_CURRENT_SOURCE_DIR}/MapConverter.cc
-	${CMAKE_CURRENT_SOURCE_DIR}/Province.cc
-	${CMAKE_CURRENT_SOURCE_DIR}/ProvinceLoader.cc
-	PARENT_SCOPE
+  ${SOURCE}
+  ${CMAKE_CURRENT_SOURCE_DIR}/MapConverter.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/Province.cc
+  ${CMAKE_CURRENT_SOURCE_DIR}/ProvinceLoader.cc
+  PARENT_SCOPE
 )
+

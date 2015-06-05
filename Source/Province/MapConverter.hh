@@ -9,13 +9,12 @@ namespace std {
 
 template <>
 struct hash<sf::Color> {
-    std::size_t operator()(const sf::Color& key) const {
-	using std::size_t;
-	using std::hash;
-
-	return (hash<int>()(key.r) + (hash<int>()(key.b)) + hash<int>()(key.b));
-	}
-    };
+  std::size_t operator()(const sf::Color& key) const {
+    using std::size_t;
+    using std::hash;
+    return (hash<int>()(key.r) + (hash<int>()(key.b)) + hash<int>()(key.b));
+  }
+};
 } // namespace std
 
 // Converts provinces map image to actual actual province location data
@@ -24,15 +23,15 @@ namespace Province {
 
 class MapConverter {
 public:
-    MapConverter();
+  MapConverter();
 
-    std::unordered_map< sf::Color, std::vector<sf::Vector2f> > tiles;
+  std::unordered_map< sf::Color, std::vector<sf::Vector2f> > tiles;
 
 private:
-    sf::Image provinces_image;
+  sf::Image provinces_image;
 
-    void init_tiles();
-    void convert_to_convex();
+  void init_tiles();
+  void convert_to_convex();
 };
 
 } // namespace Province

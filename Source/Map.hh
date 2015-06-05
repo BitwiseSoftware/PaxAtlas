@@ -7,13 +7,14 @@ namespace PA {
 
 class Map : Mikan::Entity {
 public:
-    Map();
+  Map();
 
-    void tick(float delta_seconds) override;
+  void tick(float delta_seconds) override;
 
 private:
-    sf::Texture texture;
-    sf::Sprite sprite;
+  sf::Texture texture;
+  sf::Sprite sprite;
 };
 
 } // namespace PA
+
