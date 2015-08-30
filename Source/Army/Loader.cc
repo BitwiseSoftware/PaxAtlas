@@ -1,6 +1,6 @@
 #include "Loader.hh"
 
-#include "../Mikan/Engine.hh"
+#include "mikan/Engine.hh"
 #include "Army.hh"
 #include <vector>
 

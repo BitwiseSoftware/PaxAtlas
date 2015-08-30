@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Mikan/EntityLoader.hh"
+#include "mikan/EntityLoader.hh"
 
 namespace PA {
 namespace Province {

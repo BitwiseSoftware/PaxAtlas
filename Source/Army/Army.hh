@@ -2,7 +2,7 @@
 
 #include <vector>
 #include "../Province/Province.hh"
-#include "../Mikan/Entity.hh"
+#include "mikan/Entity.hh"
 
 namespace PA {
 namespace Army {

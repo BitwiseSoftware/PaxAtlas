@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Mikan/Entity.hh"
+#include "mikan/Entity.hh"
 #include <SFML/Graphics.hpp>
 
 namespace PA {

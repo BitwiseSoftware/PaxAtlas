@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../Mikan/Entity.hh"
+#include "mikan/Entity.hh"
 #include <vector>
 
 namespace PA {

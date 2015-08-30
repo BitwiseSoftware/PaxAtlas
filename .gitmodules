@@ -1,0 +1,3 @@
+[submodule "opt/mikan"]
+	path = opt/mikan
+	url = https://github.com/BitwiseSoftware/mikan

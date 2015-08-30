@@ -9,7 +9,6 @@ set(EXECUTABLE_NAME PaxAtlas)
 
 add_subdirectory(Army)
 add_subdirectory(Country)
-add_subdirectory(Mikan)
 add_subdirectory(Province)
 
 add_executable(${EXECUTABLE_NAME} Main.cc)
@@ -18,7 +17,7 @@ include_directories(/usr/include/SFML/)
 
 add_library(
   ${LIBRARY_NAME}
-  SHARED
+  STATIC
   ${SOURCE}
 )
 
@@ -27,6 +26,7 @@ target_link_libraries(
   sfml-graphics
   sfml-window
   sfml-system
+  mikan
 )
 
 target_link_libraries(
